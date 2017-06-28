@@ -1,0 +1,10 @@
+# -*- coding:UTF-8 -*-
+
+import utils
+
+class spider(object):
+
+    def crawl(self, url):
+        print u'瞄准，目标就是这货：' + url
+        crawl_res = utils.htmlParser(url)
+

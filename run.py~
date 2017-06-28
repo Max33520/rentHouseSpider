@@ -1,0 +1,11 @@
+# -*- coding:UTF-8 -*-
+
+from rentHouse import spider
+
+g_spider = spider()
+
+if __name__ == '__main__':
+    print u'乘客请坐好，灰机要起飞了...'
+    #鱼雷目标
+    target_url = 'http://cd.58.com/chuzu/0/pn1/'
+    g_spider.crawl(traget_url)

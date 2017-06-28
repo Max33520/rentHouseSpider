@@ -1,0 +1,19 @@
+# -*- coding:UTF-8 -*-
+
+from lxml import etree
+import requests
+
+def htmlDom(html_url):
+    '''
+    通过url获取dom结构为xpath准备
+    param
+        html_url 网页地址
+    return
+        dom_tree 网页dom
+    '''
+    print u'兄弟们go go!肢解他'
+    html = requests.get(html_url).content.decode('utf-8')
+    print html.status_code
+    dom_tree = etree.HTML(html)
+    return dom_tree
+    
