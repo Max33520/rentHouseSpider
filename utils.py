@@ -12,7 +12,11 @@ def htmlDom(html_url):
         成功返回dom_tree 网页dom，失败返回None
     '''
     print u'兄弟们go go!肢解他'
-    response = requests.get(html_url)
+    proxies = {
+        "http": "61.152.81.193:9100",
+        "http": "89.40.114.26:1189"
+    }
+    response = requests.get(html_url, allow_redirects=False,  proxies=proxies)
     if response.status_code == 200:
         html = response.content.decode('utf-8')
         dom_tree = etree.HTML(html)
