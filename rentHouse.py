@@ -1,9 +1,10 @@
 # -*- coding:UTF-8 -*-
 
 import utils
-
+from retrying import retry
 class spider(object):
-
+    
+    @retry(stop_max_attempt_number=7)
     def crawl(self, url):
         '''
         利用xpath提取内容
@@ -20,7 +21,8 @@ class spider(object):
             'title' :  utils.funckRN(title)
                 }
         print house
-       
+     
+    @retry(stop_max_attempt_number=7)
     def nextPage(self,url):
         '''
         获取下一页链接
